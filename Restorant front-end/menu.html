@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Palace | Our Menu</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- First Header -->
+    <header class="first-header">
+        <!-- Restaurant Address and Phone Number -->
+        <div class="contact-info">
+            <p>
+                <span class="icon">&#128205;</span> Hamra street ,Beirut |
+                <span class="icon">&#9742;</span> +961 70 222 555
+            </p>
+        </div>
+        <!-- Login and Register Buttons -->
+        <div class="user-actions">
+            <button class="login-button" data-toggle="modal" data-target="#loginModal">
+                Login
+            </button>
+            <button class="register-button" data-toggle="modal" data-target="#registerModal">
+                Register
+            </button>
+            <!-- Facebook, Twitter, and Instagram Icons -->
+            <a href="https://www.instagram.com/" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                    height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                    <path
+                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                    </svg></a>
+            <a href="https://www.facebook.com/" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                    height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                    </svg></a>
+            <span class="card-icon">&#128179;</span>
+        </div>
+    </header>
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Login Form -->
+                    <form>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email"
+                                placeholder="Enter your email address" />
+                            <div class="error-message" id="email-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password"
+                                placeholder="Enter your password" />
+                            <div class="error-message" id="password-error"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Cancel
+                    </button>
+                    <button type="button" class="btn btn-primary" id="login-button">
+                        Login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Register</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Registration Form -->
+                    <form>
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" id="firstName"
+                                placeholder="Enter your first name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input type="tel" class="form-control" id="phoneNumber"
+                                placeholder="Enter your phone number" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email"
+                                placeholder="Enter your email address" />
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" placeholder="Choose a username" />
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password"
+                                placeholder="Enter your password" />
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword"
+                                placeholder="Confirm your password" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Cancel
+                    </button>
+                    <button type="button" class="btn btn-primary">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Add Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Second Header (Menu) -->
+    <header class="second-header">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="menu.html">Our Menu</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="menu-body">
+        <!-- Food Types Section -->
+        <section class="food-types">
+            <h2>Food Types</h2>
+            <ul>
+                <li><a href="#appetizers">Appetizers</a></li>
+                <li><a href="#main-courses">Main Courses</a></li>
+                <li><a href="#desserts">Desserts</a></li>
+                <!-- Add other food types as needed -->
+            </ul>
+        </section>
+        <!-- Appetizers Section -->
+        <section id="appetizers" class="menu-category">
+            <h3>Appetizers</h3>
+            <ul>
+                <!-- Sample Appetizer Item -->
+                <li>
+                    <img src="image/CHICKEN-STRIPS.jpg" alt="Burger" />
+                    <div class="dish">CHICKEN STRIPS</div>
+                    <div class="description">
+                        Our signature lightly breaded chicken strips that you know and
+                        love, served with our famous honey mustard dip.
+                    </div>
+                    <div class="price">5$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/SKIN-ON-FRIES.jpg" alt="Burger" />
+                    <div class="dish">IMPORTED SKIN-ON FRIES</div>
+                    <div class="description">
+                        A basket of our original unpeeled French fries, crisped to golden
+                        perfection.
+                    </div>
+                    <div class="price">5$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/pizza rolls.jpg" alt="Burger" />
+                    <div class="dish">PIZZA ROLLS</div>
+                    <div class="description">
+                        Crispy flour tortilla filled with smoked turkey, a delicious mixed
+                        cheese, black olives and tomato sauce.
+                    </div>
+                    <div class="price">7$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/cheese-garlic-rolls.jpg" alt="Burger" />
+                    <div class="dish">CHEESE GARLIC ROLLS</div>
+                    <div class="description">
+                        Crispy flour tortilla rolls filled with melted cheese, parsley and
+                        garlic, served with salsa fresca on the side.
+                    </div>
+                    <div class="price">7$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/BUFFALO-WINGS.jpg" alt="Burger" />
+                    <div class="dish">BUFFALO WINGS</div>
+                    <div class="description">
+                        Our signature chicken wings, glazed in spicy Buffalo sauce.
+                    </div>
+                    <div class="price">4$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/BBQ-WINGS.jpg" alt="Burger" />
+                    <div class="dish">BBQ WINGS</div>
+                    <div class="description">
+                        Our signature chicken wings, glazed in sweet and sassy BBQ sauce.
+                    </div>
+                    <div class="price">4$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/MOZZARELLA-STICKS.jpg" alt="Burger" />
+                    <div class="dish">MOZZARELLA STICKS</div>
+                    <div class="description">
+                        Our classic melt-in-your-mouth mozzarella sticks, served with
+                        Thousand Island dip.
+                    </div>
+                    <div class="price">7$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/CLASSIC-NACHOS.jpg" alt="Burger" />
+                    <div class="dish">CLASSIC NACHOS</div>
+                    <div class="description">
+                        Crispy corn tortilla chips topped with a rich mix of melted
+                        cheese, served with Salsa Fresca
+                    </div>
+                    <div class="price">5$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/POTATO-DIPPERS-WITH-CHEDDAR.jpg" alt="Burger" />
+                    <div class="dish">POTATO DIPPERS</div>
+                    <div class="description">
+                        Our exclusive curved and seasoned fried potatoes, just right for
+                        dunking into our fresh sour herb dip.
+                    </div>
+                    <div class="price">5$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/CURLY-FRIES.jpg" alt="Burger" />
+                    <div class="dish">CURLY FRIES</div>
+                    <div class="description">
+                        A basket of fresh crunchy fries. With a twist.
+                    </div>
+                    <div class="price">6$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+            </ul>
+        </section>
+        <!-- Main Courses Section -->
+        <section id="main-courses" class="menu-category">
+            <h3>Main Courses</h3>
+            <ul>
+                <li>
+                    <img src="image/DOUBLE-cRISP-bURGER.jpg" alt="Burger" />
+                    <div class="dish">DOUBLE CRISP BURGER</div>
+                    <div class="description">
+                        Breaded chicken breast dipped in a Korean sauce, topped with a
+                        crispy Philly cheese patty, lettuce, Asian coleslaw, and our new
+                        special honey mustard sauce.
+                    </div>
+                    <div class="price">15$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/cheese-n-chili-BURGER.jpg" alt="Burger" />
+                    <div class="dish">CHEESE ‘N’ CHILI BURGER</div>
+                    <div class="description">
+                        Breaded chicken breast topped with our special mild chili melted
+                        cheddar, tortilla chips, dill pickles, our garlic mayo and Cuban
+                        sauce
+                    </div>
+                    <div class="price">13$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/Asian-Ranch-BURGER.jpg" alt="Burger" />
+                    <div class="dish">ASIAN RANCH BURGER</div>
+                    <div class="description">
+                        Breaded chicken breast dipped in a Korean sauce, crisp lettuce,
+                        topped with Asian coleslaw and our Ranch sauce.
+                    </div>
+                    <div class="price">13$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <a href="Burger.html">
+                        <img src="image/B.B.B-BEEF-BURGER.jpg" alt="Burger" />
+                    </a>
+                    <div class="dish">B.B.B. BEEF BURGER</div>
+                    <div class="description">
+                        Grilled beef patty topped with battered onion rings, bacon,
+                        cheddar cheese and our famous B.B.B. sauce.
+                    </div>
+                    <div class="price">17$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/CLASSIC-BURGER.jpg" alt="Burger" />
+                    <div class="dish">CLASSIC BURGER</div>
+                    <div class="description">
+                        Grilled beef patty topped with sautéed onions, melted cheddar
+                        cheese, crisp lettuce, a fresh tomato slice, tangy pickles and our
+                        classic sauce.
+                    </div>
+                    <div class="price">14$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/CHICKEN-BURGER.jpg" alt="Burger" />
+                    <div class="dish">CHICKEN BURGER</div>
+                    <div class="description">
+                        Your choice of grilled or breaded chicken breast topped with crisp
+                        lettuce, a fresh tomato slice, tangy pickles and aioli sauce.
+                    </div>
+                    <div class="price">10$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/ROADSIDE-CRAB.jpg" alt="Burger" />
+                    <div class="dish">ROADSIDE CRAB</div>
+                    <div class="description">
+                        Shaved crabsticks, ripe avocado, fresh mushrooms and cocktail
+                        sauce, served in freshly baked whole-wheat baguette.
+                    </div>
+                    <div class="price">16$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/shrimp-guacamole.jpg" alt="Burger" />
+                    <div class="dish">SHRIMP GUACAMOLE</div>
+                    <div class="description">
+                        Juicy flame-grilled shrimp, Lollo Verde, Texas and guacamole
+                        sauce, served in a freshly baked baguette.
+                    </div>
+                    <div class="price">14$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/CHICKEN-sand.jpg" alt="Burger" />
+                    <div class="dish">CHICKEN SANDWICH</div>
+                    <div class="description">
+                        Grilled chicken breast, our original skin-on fries, crisp lettuce,
+                        fresh tomato slices, tangy pickles and aioli sauce, served in
+                        freshly baked baguette.
+                    </div>
+                    <div class="price">12$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/Chiken slider.jpg" alt="Burger" />
+                    <div class="dish">CHICKEN SLIDER</div>
+                    <div class="description">
+                        Grilled chicken breast, edam cheese, avocado, crisp lettuce and
+                        garlic home-style sauce, served in freshly baked whole-wheat
+                        baguette.
+                    </div>
+                    <div class="price">10$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/FOUR-CHEESE.jpg" alt="Burger" />
+                    <div class="dish">FOUR CHEESE PASTA</div>
+                    <div class="description">
+                        Penne mixed with tomato sauce and our selection of cheeses, topped
+                        with parmesan sprinkles and fresh basil.
+                    </div>
+                    <div class="price">17$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/Vegan-Pasta.jpg" alt="Burger" />
+                    <div class="dish">VEGAN PASTA</div>
+                    <div class="description">
+                        Penne mixed with tomato sauce and roasted vegetables..
+                    </div>
+                    <div class="price">18$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/chicken pasta.jpg" alt="Burger" />
+                    <div class="dish">CHICKEN PASTA</div>
+                    <div class="description">
+                        Tagliatelle in a creamy sauce with a twist of garlic, sautéed
+                        fresh mushrooms and grilled chicken, topped with parmesan
+                        sprinkles..
+                    </div>
+                    <div class="price">20$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/uper_supreme.jpg" alt="Burger" />
+                    <div class="dish">SUPER SUPREME PIZZA</div>
+                    <div class="description">
+                        special sauce topped with two layers of cheese, pepperoni, beef,
+                        onions,mushrooms, green pepper, and black olives
+                    </div>
+                    <div class="price">22$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/Pepperoni Pizza.jpg" alt="Burger" />
+                    <div class="dish">PEPPERONI PIZZA</div>
+                    <div class="description">
+                        Pizzanini sauce topped with two layers of cheese and pepperoni.
+                    </div>
+                    <div class="price">24$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+            </ul>
+        </section>
+        <!-- Desserts Section -->
+        <section id="desserts" class="menu-category">
+            <h3>Desserts</h3>
+            <ul>
+                <!-- Sample Dessert Item -->
+                <li>
+                    <img src="image/Lazy-Cake.jpg" alt="Burger" />
+                    <div class="dish">GRAND LAZY CAKE</div>
+                    <div class="description">
+                        Buttery biscuit crumbs mixed in smooth chocolate cream.
+                    </div>
+                    <div class="price">9$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/choco-tacos.jpg" alt="Burger" />
+                    <div class="dish">CHOCO TACOS</div>
+                    <div class="description">
+                        White chocolate, brownies, strawberries, bananas and Digestive
+                        crispy pie on top.
+                    </div>
+                    <div class="price">9$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/BROWNIE-TEMPTATION.jpg" alt="Burger" />
+                    <div class="dish">BROWNIE TEMPTATION</div>
+                    <div class="description">
+                        A rich chocolate brownie topped with vanilla ice cream and salted
+                        caramel sauce.
+                    </div>
+                    <div class="price">10$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/LOTUS-MADNESS.jpg" alt="Burger" />
+                    <div class="dish">LOTUS MADNESS</div>
+                    <div class="description">
+                        Super-sized pancakes topped with chocolate, bananas, Lotus spread
+                        and Lotus biscuits, drizzled in a rich chocolate sauce.
+                    </div>
+                    <div class="price">15$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/lotus-mud-pie.jpg" alt="Burger" />
+                    <div class="dish">FUN-SIZED LOTUS MUD PIE</div>
+                    <div class="description">
+                        Our fun-sized Lotus Mud Pie, with creamy Lotus ice cream and Lotus
+                        Biscuit chunks mixed right in
+                    </div>
+                    <div class="price">8$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <img src="image/oreo-mud-pie.jpg" alt="Burger" />
+                    <div class="dish">FUN-SIZED OREO MUD PIE</div>
+                    <div class="description">
+                        Our fun-sized Oreo Mud Pie mixed with Oreo ice cream with biscuit
+                        chunks. Chocolate and salted caramel sauces on the side.
+                    </div>
+                    <div class="price">8$</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <!-- Add more desserts as needed -->
+            </ul>
+        </section>
+        <!-- Cart Icon -->
+        <div class="cart-icon">
+            <a href="#cart">
+                <i class="cart-float"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                        class="bi bi-cart" viewBox="0 0 16 16">
+                        <path
+                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                    </svg>
+                </i>
+            </a>
+        </div>
+        <!-- Cart Section -->
+        <section id="cart" class="cart">
+            <h2>Cart</h2>
+            <ul id="cart-list">
+                <!-- Cart items will be added here dynamically -->
+            </ul>
+            <p id="cart-total">Total: $0.00</p>
+            <div class="cart-buttons"></div>
+        </section>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">
+            © Restaurant Palace. All Rights Reserved
+            <span id="current-year"></span>.
+        </p>
+    </footer>
+    <!-- JavaScript to display the current year and handle cart functionality -->
+    <script src="script.js" defer></script>
+</body>
+</html>
